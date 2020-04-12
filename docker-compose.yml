@@ -40,6 +40,10 @@ services:
         source: ./logstash/pipeline
         target: /usr/share/logstash/pipeline
         read_only: true
+      - type: bind
+        source: ./logs
+        target: /usr/share/logstash/input
+        read_only: false
     ports:
       - "5000:5000/tcp"
       - "5000:5000/udp"
